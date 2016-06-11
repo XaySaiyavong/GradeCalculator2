@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>jQuery Mobile: Theme Download</title>
+        <link rel="stylesheet" href="themes/GradeCal2.min.css" />
+        <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <style>
+            #hder, #fter{
+                height: 60px;
+            }
+            #showscore{
+                color: red;
+            }
+        </style>
+        <script>
+            function calgrade() {
+                var score = document.getElementById("txtscore").value;
+                var grade;
+                var textanimation;
+                if (score>100){
+                    alert("No Grade");
+                    document.getElementById("txtscore").value = "";
+                }else{
+                if (score >= 90) {
+                    // alert("A");
+                    grade = "A";
+                    document.getElementById("yourscore").innerHTML="ຄະແນນຂອງເຈົ້າ: " +score;
+                  textanimation=document.getElementById("showscore").innerHTML = "ເກຣດທີ່ໄດ້: "+grade;
+                  textanimation.style.position='relative';
+                    document.getElementById("txtscore").value = "";
+                } else if (score >= 85) {
+                    grade = "B+";
+                             document.getElementById("yourscore").innerHTML="ຄະແນນຂອງເຈົ້າ: " +score;
+                    document.getElementById("showscore").innerHTML ="ເກຣດທີ່ໄດ້: "+ grade;
+                    document.getElementById("txtscore").value = "";
+                    // alert("B+");
+                } else if (score >= 80) {
+
+                    grade = "B";
+                             document.getElementById("yourscore").innerHTML="ຄະແນນຂອງເຈົ້າ: " +score;
+                    document.getElementById("showscore").innerHTML = "ເກຣດທີ່ໄດ້: "+grade;
+                    document.getElementById("txtscore").value = "";
+                    //  alert("B");
+                } else if (score >= 75) {
+                    grade = "C+";
+                             document.getElementById("yourscore").innerHTML="ຄະແນນຂອງເຈົ້າ: " +score;
+                    document.getElementById("showscore").innerHTML ="ເກຣດທີ່ໄດ້: "+ grade;
+                    document.getElementById("txtscore").value = "";
+                    // alert("C+");
+                } else if (score >= 70) {
+                    grade = "C";
+                             document.getElementById("yourscore").innerHTML="ຄະແນນຂອງເຈົ້າ: " +score;
+                    document.getElementById("showscore").innerHTML = "ເກຣດທີ່ໄດ້: "+ grade;
+                    document.getElementById("txtscore").value = "";
+                    // alert("C");
+                } else if (score >= 65) {
+                    grade = "D+";
+                             document.getElementById("yourscore").innerHTML="ຄະແນນຂອງເຈົ້າ: " +score;
+                    document.getElementById("showscore").innerHTML = "ເກຣດທີ່ໄດ້: "+grade;
+                    document.getElementById("txtscore").value = "";
+                    // alert("D+");
+                } else if (score >= 60) {
+                    grade = "D";
+                             document.getElementById("yourscore").innerHTML="ຄະແນນຂອງເຈົ້າ: " +score;
+                    document.getElementById("showscore").innerHTML = "ເກຣດທີ່ໄດ້: "+grade;
+                    document.getElementById("txtscore").value = "";
+                    //  alert("D");
+                } else {
+                    grade = "F";
+                             document.getElementById("yourscore").innerHTML="ຄະແນນຂອງເຈົ້າ: " +score;
+                    document.getElementById("showscore").innerHTML = "ເກຣດທີ່ໄດ້: "+grade;
+                    document.getElementById("txtscore").value = "";
+                    //   alert("F");
+                }
+            }
+            }
+
+
+        </script>
+    </head>
+    <body>
+        <div data-role="header"><h3>App ຄິດໄລ່ Grade</h3>
+
+        </div>
+        <div data-role="content">
+
+            <input type="text" placeholder="ກະລຸນາປ້ອນຄະແນນຂອງທ່ານ" id="txtscore" maxlength="3">
+            <input type="button" value="ຄິດໄລ່" onclick="calgrade()">
+            <h1 id="yourscore" align="center"></h1>
+            <h1 id="showscore" align="center" ></h1>
+            <br>
+            <button>ກ່ຽວກັບເກຣດຄະແນນ</button><button>ກ່ຽວກັບເກຣດຄະແນນ</button>
+        </div>
+
+
+
+
+        <div data-role="footer" data-position="fixed">
+            <h3>LOGOS College</h3>
+        </div>
+    </body>
+</html>
